@@ -147,24 +147,149 @@ for(let i=0; i<numSign_arr.length; i++){
 
 //AUGUST 6TH NOTES - TAUGHT BY ZACH - LOOPS CONTINUED
 
-//FOR LOOPS
-for (let i=0; i<5; i++){
-    console
-}
-
-//WHILE LOOP 
-let i=0;
-while (i<5){
-    console.log(`(while) i = ${i}`);
-}
 
 
-//FOR EACH LOOPS 
+//PRACTICE EXERCISES 
 
-const numbers=[1,2,3,4,5];
+//! For Loops Problems TWO
 
-numbers.forEach((x) => {
-    if (x===3){console.log(x);
+// !Multiples Checker
+// ? Create a program that checks if the elements in an array of numbers are multiples of a specific number and displays a message accordingly.
+// TODO Define an array containing a list of numbers.
+// TODO Define a variable for the specific number to check multiples of.
 
+//DECLARE VARIABLES 
+//THE NUMBERS SET I HAVE 
+let int_arr=[1,8,13,87]
+
+//THE NUMBER I WANT USE TO CHECK AGAINST MY NUMBER SET
+let checkNum=2;
+
+//THIS WILL HOLD THE NUMBER THAT IS LEFT OVER AFTER DIVIDING THE NUMBERS IN THE ARRAY BY CHECKNUM(IN THIS EX: 2)
+let remainder;
+
+// THIS LOOP LOOKS THROUGH MY ARRAY
+for(let i=0; i<int_arr.length; i++){
+
+    //REMAINDER WILL HOLD ARRAY[i] DIVIDED BY CHECKNUM -- "%" WILL GIVE YOU THE AMOUNT REMAINING AFTER DIVIDING
+    // (1 DIVIDED BY 2 LEAVES A REMAINDER OF .50) 
+    //REMAINDER=.5
+    remainder=(int_arr[i] % checkNum)
+    
+    //IF THERE IS NO REMAINDER IT MEANS THAT THE NUMBER DIVIDED EVENLY - SO IT IS A MULTIPLE OF THAT NUMBER
+    if(remainder==0){
+        console.log(`"${int_arr[i]} is a multiple of ${checkNum}"`);
     }
-})
+
+    //IF THE REMAINDER IS ANYTHING EXCEPT 0 IT MEANS THAT NUMBER DID NOT DIVIDE EVENELY AND IT IS NOT A MULTIPLE OF THAT NUMBER
+    else{
+        console.log(`"${int_arr[i]} is NOT a multiple of ${checkNum}"`);
+    };//END IF/ELSE 
+
+}//END FOR LOOP
+ 
+ 
+// !Age Group Categorizer
+// ? Create a program that categorizes the ages in an array as 'child', 'teen', 'adult', or 'senior' based on their values.
+// TODO Define an array containing a list of ages.
+let ages_arr=[10, 25,78,17];
+// Output Results: Use console.log to display the age categories.
+for(let i=0; i<ages_arr.length; i++){
+    
+    if(ages_arr[i]>=65){
+        console.log("Senior")
+    }else if (ages_arr[i]>17){
+        console.log("adult")
+    }else if (ages_arr[i]>12){
+        console.log("teen")
+    }else if (ages_arr[i]<13){
+        console.log("child")
+    }; 
+}//END FOR LOOP
+ 
+ 
+// ! Palindrome Checker
+// ?Create a program that checks if the elements in an array of strings are palindromes and displays a message accordingly.
+// TODO Define an array containing a list of strings.
+ 
+//DECLARE ARRAY VARIABLES
+const possiblePalindromes = ["kayak", "pool", "rotator", "nun", "spit"];
+
+//FOR LOOP WILL LOOP THROUGH EACH ARRAY ELEMENT
+ for ( let i = 0; i < possiblePalindromes.length; i++) {
+
+    //VARIABLE IS CREATED TO HOLD THE ELEMENT AT THE TARGETED LOCATION- IT WILL BE UPDATED EACH TIME THE LOOP RUNS WITH THE STRING OF THE NEXT ARRAY
+    let str = possiblePalindromes[i];
+
+    //VARIABLE IS SET TO AN EMPTY STRING EACH TIME LOOP RUNS
+    let reversed = "";
+ 
+    //NESTED FOR LOOP WILL LOOK THROUGH THE STRING MOVING BACKWARDS - 
+    for (let j = str.length - 1; j >= 0; j-- ) {
+        //VARIABLE REVERSED WILL STORE EACH CHAR TO CREATE A NEW STRING
+        reversed += str[j];
+    }//end for loop
+ 
+    //THIS WILL EVALUATE TO SEE IF THE STRING AT LOCATION[i] IS STRICTLY EQUAL TO THE STRING HELD BY "REVERSED" - IF SO - IT IS A PALINDROME- ELSE IT IS NOT
+    if (str === reversed) {
+        console.log(`${str} is a palindrome!`)
+    }else {
+        console.log(`${str} is NOT a palindrome!`)
+    }//end if else
+ }//end for loop
+
+
+
+// !Prime Number Checker
+// ?Create a program that checks if the elements in an array of numbers are prime and displays a message accordingly.
+// TODO Define an array containing a list of numbers.
+// Output Results: Use console.log to display the results.
+
+//A PRIME NUMBER ONLY DIVIDES EVENLY BY 1 OR BY ITSELF -- SO WE NEED TO CHECK EVERY NUMBER LESS THAN THAT NUMBER TO SEE IF IT DIVISIBLE. 
+
+//DECLARE VARIABLES
+let numToCheck=[1,7,8,6,13,50];
+
+//FOR LOOP LOOKS THROUGH ARRAY
+for(let i=0; i<numToCheck.length; i++){
+    let isPrime=true; 
+
+    //IF THE NUMBER AT TARGET LOCATION IS LOOSELY EQUAL TO 1 - IT IS NOT A PRIME
+    if (numToCheck[i] == 1) {
+        console.log("1 is neither prime nor composite number.");
+    }//END IF
+    
+    //ELSE IF THE NUMBER AT TARGET LOCATION IS GREATER THAN ONE WE ENTER A NESTED FOR LOOP
+    else if (numToCheck[i] > 1) {
+
+        // WE START J AT 2 - THE LOWEST NUMBER AFTER KNOWING THAT IT IS GREATER THAN 1. THE LOOP WILL CONTINUE TO CHECK EACH NUMBER
+        //UNTIL IT IS LESS THAN THE NUMBER WE ARE TARGETING.
+        for (let j = 2; j < numToCheck[i]; j++) {
+
+           // IF THE REMAINDER EQUALS 0 AT ANY OF THE NUMBERS LESS THAN ITSELF WE KNOW IT IS NOT PRIME AND isPrime WILL SWITCH TO FALSE
+            if (numToCheck[i] % j == 0) {
+                isPrime = false;
+                break;
+            }//END IF 
+
+        }//END INNER FOR LOOP
+    
+        //IF AFTER EVALUATION  isPrime IS TRUE IT WILL LOG PRIME NUMBER -- IF FALSE IT WILL LOG NOT PRIME
+        if (isPrime===true) {
+            console.log(`${numToCheck[i]} is a prime number`);
+        } else {
+            console.log(`${numToCheck[i]} is a not prime number`);
+        }//END IF/ELSE
+
+    }//END ELSE IF
+
+}//END OUTER FOR LOOP 
+
+
+
+ 
+// !Uppercase Checker
+// ?Create a program that checks if the elements in an array of strings are in uppercase and displays a message accordingly.
+// TODO Define an array containing a list of strings.
+// Output Results: Use console.log to display the results.
+ 
