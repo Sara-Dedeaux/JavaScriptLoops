@@ -145,4 +145,26 @@ for(let i=0; i<numSign_arr.length; i++){
 
 
 
+//AUGUST 6TH NOTES - TAUGHT BY ZACH - LOOPS CONTINUED
 
+//FOR LOOPS
+for (let i=0; i<5; i++){
+    console
+}
+
+//WHILE LOOP 
+let i=0;
+while (i<5){
+    console.log(`(while) i = ${i}`);
+}
+
+
+//FOR EACH LOOPS 
+
+const numbers=[1,2,3,4,5];
+
+numbers.forEach((x) => {
+    if (x===3){console.log(x);
+
+    }
+})
