@@ -218,10 +218,10 @@ const possiblePalindromes = ["kayak", "pool", "rotator", "nun", "spit"];
 //FOR LOOP WILL LOOP THROUGH EACH ARRAY ELEMENT
  for ( let i = 0; i < possiblePalindromes.length; i++) {
 
-    //VARIABLE IS CREATED TO HOLD THE ELEMENT AT THE TARGETED LOCATION- IT WILL BE UPDATED EACH TIME THE LOOP RUNS WITH THE STRING OF THE NEXT ARRAY
+    //VARIABLE  str IS CREATED TO HOLD THE ELEMENT AT THE TARGETED LOCATION- IT WILL BE UPDATED EACH TIME THE LOOP RUNS WITH THE STRING OF THE NEXT ARRAY
     let str = possiblePalindromes[i];
 
-    //VARIABLE IS SET TO AN EMPTY STRING EACH TIME LOOP RUNS
+    //VARIABLE reversed IS SET TO AN EMPTY STRING EACH TIME LOOP RUNS TO CLEAR ANY DATA IT HELD FROM THE LAST COMPLETED LOOP
     let reversed = "";
  
     //NESTED FOR LOOP WILL LOOK THROUGH THE STRING MOVING BACKWARDS - 
@@ -252,12 +252,15 @@ let numToCheck=[1,7,8,6,13,50];
 
 //FOR LOOP LOOKS THROUGH ARRAY
 for(let i=0; i<numToCheck.length; i++){
-    let isPrime=true; 
+   
+    //isPrime IS DECLARED INSIDE OF FOR LOOP SO THAT IT WILL BEGIN AS TRUE EACH TIME THE LOOP RUNS-
+     //OTHERWISE ONCE IT IS SET TO FALSE IT WILL NOT RESET TO TRUE BEFORE THE NEXT PASS AND WE CAN RECEIVE BAD DATA
+        let isPrime=true; 
 
-    //IF THE NUMBER AT TARGET LOCATION IS LOOSELY EQUAL TO 1 - IT IS NOT A PRIME
+    //IF THE NUMBER AT TARGET LOCATION IS LOOSELY EQUAL TO 1 - LOG THAT 1 IS NOT A PRIME NOR COMPOSITE
     if (numToCheck[i] == 1) {
         console.log("1 is neither prime nor composite number.");
-    }//END IF
+    }//END IF NUM == 1
     
     //ELSE IF THE NUMBER AT TARGET LOCATION IS GREATER THAN ONE WE ENTER A NESTED FOR LOOP
     else if (numToCheck[i] > 1) {
@@ -270,7 +273,7 @@ for(let i=0; i<numToCheck.length; i++){
             if (numToCheck[i] % j == 0) {
                 isPrime = false;
                 break;
-            }//END IF 
+            }//END IF %==0
 
         }//END INNER FOR LOOP
     
@@ -279,9 +282,9 @@ for(let i=0; i<numToCheck.length; i++){
             console.log(`${numToCheck[i]} is a prime number`);
         } else {
             console.log(`${numToCheck[i]} is a not prime number`);
-        }//END IF/ELSE
+        }//END IF/ELSE isPrime === TRUE
 
-    }//END ELSE IF
+    }//END ELSE IF GREATER THAN 1
 
 }//END OUTER FOR LOOP 
 
