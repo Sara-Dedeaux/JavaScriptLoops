@@ -213,7 +213,7 @@ for(let i=0; i<ages_arr.length; i++){
 // TODO Define an array containing a list of strings.
  
 //DECLARE ARRAY VARIABLES
-const possiblePalindromes = ["kayak", "pool", "rotator", "nun", "spit"];
+const possiblePalindromes = ["level", "pool", "rotator", "nun", "camp"];
 
 //FOR LOOP WILL LOOP THROUGH EACH ARRAY ELEMENT
  for ( let i = 0; i < possiblePalindromes.length; i++) {
@@ -232,9 +232,9 @@ const possiblePalindromes = ["kayak", "pool", "rotator", "nun", "spit"];
  
     //THIS WILL EVALUATE TO SEE IF THE STRING AT LOCATION[i] IS STRICTLY EQUAL TO THE STRING HELD BY "REVERSED" - IF SO - IT IS A PALINDROME- ELSE IT IS NOT
     if (str === reversed) {
-        console.log(`${str} is a palindrome!`)
+        console.log(`${str} is a palindrome`)
     }else {
-        console.log(`${str} is NOT a palindrome!`)
+        console.log(`${str} is NOT a palindrome`)
     }//end if else
  }//end for loop
 
@@ -252,10 +252,10 @@ let numToCheck=[1,7,8,6,13,50];
 
 //FOR LOOP LOOKS THROUGH ARRAY
 for(let i=0; i<numToCheck.length; i++){
-   
+    let isPrime=true; 
+    
     //isPrime IS DECLARED INSIDE OF FOR LOOP SO THAT IT WILL BEGIN AS TRUE EACH TIME THE LOOP RUNS-
      //OTHERWISE ONCE IT IS SET TO FALSE IT WILL NOT RESET TO TRUE BEFORE THE NEXT PASS AND WE CAN RECEIVE BAD DATA
-        let isPrime=true; 
 
     //IF THE NUMBER AT TARGET LOCATION IS LOOSELY EQUAL TO 1 - LOG THAT 1 IS NOT A PRIME NOR COMPOSITE
     if (numToCheck[i] == 1) {
@@ -285,7 +285,7 @@ for(let i=0; i<numToCheck.length; i++){
         }//END IF/ELSE isPrime === TRUE
 
     }//END ELSE IF GREATER THAN 1
-
+    
 }//END OUTER FOR LOOP 
 
 
